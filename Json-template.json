@@ -37,6 +37,12 @@
     "tags": [
 	"actor",
 	"legacy"
-    ]
+    ],
+
+    "palette": {
+    	"yes": ["what we want"],
+    	"no": ["what we dont want"]
+
+    }
 
 }

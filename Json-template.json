@@ -25,7 +25,7 @@
     "entities": [
 	{
 	    "name": "Entity entityson",
-	    "type": "something from the types list",
+	    "tags": ["something from the types list"],
 	    "description": "entity entityson was an entity"
 	}
     ],
@@ -34,7 +34,7 @@
 	"Something interesting about the world"
     ],
 
-    "types": [
+    "tags": [
 	"actor",
 	"legacy"
     ]

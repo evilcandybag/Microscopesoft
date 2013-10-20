@@ -26,7 +26,8 @@
 	{
 	    "name": "Entity entityson",
 	    "tags": ["something from the types list"],
-	    "description": "entity entityson was an entity"
+	    "description": "entity entityson was an entity",
+	    "subentities": []
 	}
     ],
 
@@ -34,15 +35,10 @@
 	"Something interesting about the world"
     ],
 
-    "tags": [
-	"actor",
-	"legacy"
-    ],
-
     "palette": {
     	"yes": ["what we want"],
-    	"no": ["what we dont want"]
-
+    	"no": ["what we dont want"],
+    	"theme": "The theme, yo"
     }
 
 }

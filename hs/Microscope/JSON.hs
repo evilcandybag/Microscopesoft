@@ -82,4 +82,4 @@ instance FromJSON Mood where
     case map toLower m of
       "light" -> return Light
       "dark"  -> return Dark
-      _       -> mzero
+      m       -> fail $ "Mood was neither light nor dark, but '" ++ m ++ "'"

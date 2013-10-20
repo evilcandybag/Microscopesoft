@@ -31,4 +31,7 @@ verifyWorld w = do
       forM_ unresolved $ \ref -> do
         putStrLn $ "  " ++ show ref
   where
-    unresolved = nub $ sort [r | r <- refsIn w, isNothing (named w r)]
+    unresolved = nubSort [r | r <- refsIn w, isNothing (named w r)]
+
+nubSort :: (Eq a, Ord a) => [a] -> [a]
+nubSort = map head . group . sort

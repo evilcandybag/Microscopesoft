@@ -12,21 +12,22 @@ import Microscope.Types
 
 -- | Try to get an element, fail with a useful message if we can't.
 get :: FromJSON a => Object -> T.Text -> Parser a
-get o s = o .: s `mplus` fail ("Required key not found: " ++ show s)
+get o s =
+  o .: s `mplus` fail ("Required key not found or has wrong type: " ++ show s)
 
 instance FromJSON World where
   parseJSON (Object o) =
-    World <$> get o "periods"
-          <*> get o "entities"
-          <*> get o "trivia"
+    World <$> (get o "periods" `mplus` return [])
+          <*> (get o "entities" `mplus` return [])
+          <*> (get o "trivia" `mplus` return [])
           <*> get o "palette"
   parseJSON _ =
     mzero
 
 instance FromJSON Palette where
   parseJSON (Object o) =
-    Palette <$> get o "yes"
-            <*> get o "no"
+    Palette <$> (get o "yes" `mplus` return [])
+            <*> (get o "no" `mplus` return [])
             <*> get o "theme"
   parseJSON _ =
     mzero
@@ -36,7 +37,7 @@ instance FromJSON Period where
     Period <$> get o "tagline"
            <*> get o "description"
            <*> get o "mood"
-           <*> get o "events"
+           <*> (get o "events" `mplus` return [])
   parseJSON _ =
     mzero
 
@@ -45,7 +46,7 @@ instance FromJSON Entity where
     Entity <$> get o "name"
            <*> (get o "tags" `mplus` ((:[]) <$> get o "tags"))
            <*> get o "description"
-           <*> get o "subentities"
+           <*> (get o "subentities" `mplus` return [])
   parseJSON _ =
     mzero
 
@@ -54,7 +55,7 @@ instance FromJSON Event where
     Event <$> get o "tagline"
           <*> get o "description"
           <*> get o "mood"
-          <*> get o "scenes"
+          <*> (get o "scenes" `mplus` return [])
   parseJSON _ =
     mzero
 

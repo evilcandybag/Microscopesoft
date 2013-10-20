@@ -1,42 +1,42 @@
 {
-	periods: [
+    "periods": [
+	{
+	    "tagline": "The description on the card",
+	    "description": "more details about the period",
+	    "mood": "light",
+	    "events": [
 		{
-			tagline: "The description on the card",
-			description: "more details about the period",
-			mood: "light",
-			events: [
-				{
-					tagline: "the text on the card",
-					description: "more details about the period",
-					mood: "light",
-					scenes: [
-						{
-							question: "What the fuck?",
-							answer: "This the fuck.",
-							description: "This shit went down."
-						}
+		    "tagline": "the text on the card",
+		    "description": "more details about the period",
+		    "mood": "light",
+		    "scenes": [
+			{
+			    "question": "What the fuck?",
+			    "answer": "This the fuck.",
+			    "description": "This shit went down."
+			}
 
-					]
-				}
-			]
+		    ]
 		}
-	],
+	    ]
+	}
+    ],
 
-	entities: [
-		{
-			name: "Entity entityson",
-			type: "something from the types list",
-			description: "entity entityson was an entity"
-		}
-	],
+    "entities": [
+	{
+	    "name": "Entity entityson",
+	    "type": "something from the types list",
+	    "description": "entity entityson was an entity"
+	}
+    ],
 
-	trivia: [
-		"Something interesting about the world"
-	],
+    "trivia": [
+	"Something interesting about the world"
+    ],
 
-	types: [
-		"actor",
-		"legacy"
-	]
+    "types": [
+	"actor",
+	"legacy"
+    ]
 
 }

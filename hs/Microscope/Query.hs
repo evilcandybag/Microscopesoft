@@ -24,4 +24,4 @@ named w n =
     msum [named' e | e <- worldEntities w]
   where
     named' e | entityName e == n = return e
-             | otherwise         = msum [named' e | e' <- entitySubentities e]
+             | otherwise         = msum [named' e' | e' <- entitySubentities e]
